@@ -13,10 +13,10 @@ import shutil
 # TRAINING SETTINGS
 ########################################################################################################################
 
-experiment_no = 11
+experiment_no = 12
 
 batch_size = 16
-dataset = 'skin_dataset'
+dataset = 'sugarcane_dataset'
 image_size = 224
 stretch = False
 
@@ -260,7 +260,7 @@ heatmaps_for_test_images_only = True #False
 # MODEL SETTINGS
 ########################################################################################################################
 
-dropout_rate = 0.5
+dropout_rate = 0.6
 hidden_neurons = 512
 
 #architecture = 'ResNet50'

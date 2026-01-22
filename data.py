@@ -133,7 +133,7 @@ def get_data_generator():
         rotation_range=90, 
         width_shift_range=0.15,
         height_shift_range=0.15,
-        brightness_range=(0.7, 1.3),  
+        brightness_range=(0.8, 1.2),  
         shear_range=0.1,
         zoom_range=0.3,
         channel_shift_range=5.0, 
