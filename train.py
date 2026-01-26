@@ -75,17 +75,31 @@ try:
         classes=np.unique(train_classes),
         y=train_classes
     )
-    # Convertimos a diccionario para Keras
     train_class_weights = dict(enumerate(class_weights_list))
-    
-    print("Weights per class:")
+
+    print("\n--- Weights ---")
     for idx, weight in train_class_weights.items():
-        print(f"Class {idx}: {weight:.2f}")
+        # Intentamos mostrar el nombre de la clase si 'classes' está disponible en el contexto global
+        nombre_clase = classes[idx] if 'classes' in globals() else "Unknown"
+        print(f"Index {idx} ({nombre_clase}): {weight:.2f}")
+
+# MANUAL PENALIZATION
+    CLASS = 5
+    FACTOR_MULTIPLICADOR = 2.5 
+
+    if CLASS in train_class_weights:
+        peso_original = train_class_weights[CLASS]
+        nuevo_peso = peso_original * FACTOR_MULTIPLICADOR    
+        train_class_weights[CLASS] = nuevo_peso
+        print(f"CLASS: {CLASS} now has a weight of {nuevo_peso:.2f}")
+    else:
+        print(f"\n Class Index {CLASS} does not exist.")
+
+    print("\Weights:", train_class_weights)
 
 except Exception as e:
-    print(f"Error: {e}. Default weights will be stablished (1.0)")
+    print(f"Error: Standard weights will be set (1.0)")
     train_class_weights = None
-# ------------------------------------------------------
 
 
 # Warm up
