@@ -13,10 +13,10 @@ import shutil
 # TRAINING SETTINGS
 ########################################################################################################################
 
-experiment_no = 13
+experiment_no = 14
 
 batch_size = 16
-dataset = 'sugarcane_dataset'
+dataset = 'waste_dataset'
 image_size = 224
 stretch = False
 
@@ -66,7 +66,7 @@ balance_dataset = True #False
 
 # train (T) 80%, val (V) 10%, test (S) 10%
 subset_distribution = [{'filter': [], 'distribution': ['T', 'T', 'T', 'T', 'V', 'S', 'T', 'T', 'T', 'T']}]
-data_sub_folder = f'train80-val10-{dataset}'
+data_sub_folder = f'train80-val10-test10_{dataset}'
 
 #-----------------------------------------------------------------------------------------------------------------------
 # DATASET BALANCE EXPERIMENTS
@@ -225,7 +225,7 @@ elif optimizer_name == 'RMSprop':
     init_lr = 1e-3
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=init_lr)
 elif optimizer_name == 'Adam':
-    init_lr = 1e-5
+    init_lr = 1e-4
     optimizer = tf.keras.optimizers.Adam(learning_rate=init_lr)
 
 data_augmentation = True
@@ -260,14 +260,14 @@ heatmaps_for_test_images_only = True #False
 # MODEL SETTINGS
 ########################################################################################################################
 
-dropout_rate = 0.3
+dropout_rate = 0.5
 hidden_neurons = 512
 
 #architecture = 'ResNet50'
-#architecture = 'ResNet50V2'
+architecture = 'ResNet50V2'
 #architecture = 'EfficientNetB0'
 #architecture = 'EfficientNetB1'
-architecture = 'EfficientNetB2'
+#architecture = 'EfficientNetB2'
 #architecture = 'EfficientNetB3'
 #architecture = 'EfficientNetB4'
 #architecture = 'EfficientNetB5'
