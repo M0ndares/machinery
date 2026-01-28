@@ -13,10 +13,10 @@ import shutil
 # TRAINING SETTINGS
 ########################################################################################################################
 
-experiment_no = 14
+experiment_no = 15
 
 batch_size = 16
-dataset = 'waste_dataset'
+dataset = 'sign-language_dataset'
 image_size = 224
 stretch = False
 
@@ -225,7 +225,7 @@ elif optimizer_name == 'RMSprop':
     init_lr = 1e-3
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=init_lr)
 elif optimizer_name == 'Adam':
-    init_lr = 1e-4
+    init_lr = 1e-5
     optimizer = tf.keras.optimizers.Adam(learning_rate=init_lr)
 
 data_augmentation = True
