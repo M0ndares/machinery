@@ -13,7 +13,7 @@ import shutil
 # TRAINING SETTINGS
 ########################################################################################################################
 
-experiment_no = 15
+experiment_no = 21
 
 batch_size = 16
 dataset = 'sign-language_dataset'
@@ -225,7 +225,7 @@ elif optimizer_name == 'RMSprop':
     init_lr = 1e-3
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=init_lr)
 elif optimizer_name == 'Adam':
-    init_lr = 1e-5
+    init_lr = 1e-4
     optimizer = tf.keras.optimizers.Adam(learning_rate=init_lr)
 
 data_augmentation = True
@@ -261,13 +261,13 @@ heatmaps_for_test_images_only = True #False
 ########################################################################################################################
 
 dropout_rate = 0.5
-hidden_neurons = 512
+hidden_neurons = 1024
 
 #architecture = 'ResNet50'
-architecture = 'ResNet50V2'
+#architecture = 'ResNet50V2'
 #architecture = 'EfficientNetB0'
 #architecture = 'EfficientNetB1'
-#architecture = 'EfficientNetB2'
+architecture = 'EfficientNetB2'
 #architecture = 'EfficientNetB3'
 #architecture = 'EfficientNetB4'
 #architecture = 'EfficientNetB5'
