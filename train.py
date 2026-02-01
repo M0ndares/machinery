@@ -238,8 +238,7 @@ if True:
     cm = confusion_matrix(y_cm, y_cm_out)
     cm = 100 * cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
 
-    fig_size = round(len(classes) * 0.5)
-    fig_size = (5 + fig_size, fig_size)
+    fig_size = (12, 10)
 
     plot_confusion_matrix(y_cm, y_cm_out, figsize=fig_size,
                           title='Misclassified {} out of {} specimens'.format(misclassified, len(y_cm)))

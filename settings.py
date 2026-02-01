@@ -13,10 +13,10 @@ import shutil
 # TRAINING SETTINGS
 ########################################################################################################################
 
-experiment_no = 21
+experiment_no = 24
 
 batch_size = 16
-dataset = 'sign-language_dataset'
+dataset = 'waste_dataset'
 image_size = 224
 stretch = False
 
@@ -231,7 +231,7 @@ elif optimizer_name == 'Adam':
 data_augmentation = True
 cosine_annealing = False #True
 
-monitor_loss = False #True #False
+monitor_loss = False #True
 if monitor_loss:
     val_monitor = ('val_loss', 'min')
 else:
@@ -261,7 +261,7 @@ heatmaps_for_test_images_only = True #False
 ########################################################################################################################
 
 dropout_rate = 0.5
-hidden_neurons = 1024
+hidden_neurons = 512
 
 #architecture = 'ResNet50'
 #architecture = 'ResNet50V2'
