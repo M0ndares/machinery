@@ -121,29 +121,18 @@ if not join_test_with_train:
 
 
 # DATA AUGMENTATION
-
 def get_data_generator():
     data_gen = tf.keras.preprocessing.image.ImageDataGenerator(
-        featurewise_center=False,
-        samplewise_center=False,
-        featurewise_std_normalization=False,
-        samplewise_std_normalization=False,
-        zca_whitening=False,
-        zca_epsilon=1e-06,
-        rotation_range=90, 
-        width_shift_range=0.15,
-        height_shift_range=0.15,
-        brightness_range=(0.8, 1.2),  
-        shear_range=0.1,
-        zoom_range=0.3,
-        channel_shift_range=5.0, 
-        fill_mode='nearest', 
-        cval=0,
-        horizontal_flip=True,
-        vertical_flip=True,
-        rescale=None,
-        preprocessing_function=None,
-        validation_split=0.0,
+        rotation_range=20,           
+        width_shift_range=0.2,       
+        height_shift_range=0.2,     
+        brightness_range=(0.6, 1.4), 
+        zoom_range=0.4,             
+        horizontal_flip=True,        
+        vertical_flip=False,         
+        fill_mode='constant',     
+        cval=255,                   
+        preprocessing_function=tf.keras.applications.efficientnet_v2.preprocess_input,
         dtype=np.float32
     )
     return data_gen
