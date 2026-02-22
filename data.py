@@ -9,7 +9,6 @@ import pandas as pd
 import threading
 import multiprocessing
 
-
 classes = [fname for fname in os.listdir(train_folder)]
 print(classes)
 
@@ -119,18 +118,17 @@ if not join_test_with_train:
         x_test[i] = img
 """
 
-
 # DATA AUGMENTATION
 def get_data_generator():
     data_gen = tf.keras.preprocessing.image.ImageDataGenerator(
-        rotation_range=20,           
-        width_shift_range=0.2,       
-        height_shift_range=0.2,     
-        brightness_range=(0.6, 1.4), 
+        rotation_range=180,           
+        width_shift_range=0.3,       
+        height_shift_range=0.3,     
+        brightness_range=(0.5, 1.5), 
         zoom_range=0.4,             
         horizontal_flip=True,        
-        vertical_flip=False,         
-        fill_mode='constant',     
+        vertical_flip=True,         
+        fill_mode='nearest',     
         cval=255,                   
         preprocessing_function=tf.keras.applications.efficientnet_v2.preprocess_input,
         dtype=np.float32

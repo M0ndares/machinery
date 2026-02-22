@@ -66,7 +66,6 @@ lr_callback = schedule_lr if cosine_annealing else reduce_lr
 data_gen_train = DataGenerator(images=train_images, image_classes=train_classes, use_augmentation=data_augmentation)
 data_gen_valid = DataGenerator(images=val_images, image_classes=val_classes, use_augmentation=data_augmentation)
 
-
 # WEIGHTS CALCULATION
 print("Calculando pesos de clase para equilibrar dataset...")
 try:

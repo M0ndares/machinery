@@ -13,10 +13,9 @@ import shutil
 # TRAINING SETTINGS
 ########################################################################################################################
 
-experiment_no = 28
-
+experiment_no = 46
 batch_size = 16
-dataset = 'sign-language_dataset'
+dataset = 'waste_dataset'
 image_size = 224
 stretch = False
 
@@ -261,7 +260,7 @@ heatmaps_for_test_images_only = True #False
 ########################################################################################################################
 
 dropout_rate = 0.65
-hidden_neurons = 1024
+hidden_neurons = 2048
 
 #architecture = 'ResNet50'
 architecture = 'ResNet50V2'
